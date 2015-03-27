@@ -1,0 +1,12 @@
+{
+    "lodestone_root_url": "http://na.finalfantasyxiv.com/lodestone/playguide/db/item/",
+    "category2": {
+        "arms": 1,
+        "tools": 2,
+        "armor": 3,
+        "accessories": 4,
+        "consumables": 5,
+        "materials": 6,
+        "other": 7
+    }
+}
