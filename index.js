@@ -1,5 +1,6 @@
 var chalk = require('chalk'),
     fs = require('fs'),
+    childProcess = require('child_process'),
     _ = require('underscore'),
     shell = require('shelljs');
 
@@ -13,10 +14,16 @@ try {
 }
 
 var category = argv.category || 'materials',
+    pages = argv.pages,
     url = config.lodestone_root_url;
 
 console.log(chalk.magenta('Starting Lodestone scrape for %s ...'), category);
 
-var result = shell.exec('casperjs ./src/casper_init.js --url=' + url + ' --category=' + config.category2[category]);
+var options = ' --url=' + url + ' --category=' + config.category2[category];
 
-console.log(chalk.magenta('Done!'));
+if(pages) {
+    options += ' --pages=' + pages;
+}
+
+// how many pages to traverse and collect data
+shell.exec('casperjs ./src/casper_init.js' + options);

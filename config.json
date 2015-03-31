@@ -1,5 +1,6 @@
 {
     "lodestone_root_url": "http://na.finalfantasyxiv.com/lodestone/playguide/db/item/",
+    "output_format": "json",
     "category2": {
         "arms": 1,
         "tools": 2,
