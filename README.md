@@ -1,5 +1,5 @@
 # FFXIV Lodestone Data Utility
-A scraping utility for FFXIV ARR's Lodestone, built in node. 
+A scraping utility for FFXIV ARR's Lodestone, built in node.
 
 **If you're just looking for the LS data**, I've included the latest result of this script in [`output` folder](). Just download this repo as a `.zip` and save yourself the time. <!-- Want to thank me? Buy the ad-free version of my app, FFXIV's [Disciple of Gil]()! -->
 
@@ -16,16 +16,19 @@ While FFXIV does not provide an API for their data, they do have everything avai
 
 ## Options
 
+`--category1`
+
+Which category to scrape. Expects a name -- see `config.json` for available options.
+Defaults to `item`.
+
 `--category2`  
-Which category to scrape. Expects a name -- see `config.json` for available options. 
-Defaults to `--category2=materials`.
+Which sub category to scrape. Expects a name -- see `config.json` for available options. Has no default.
 
 Why `category2`? Because that's what ffxiv calls it. :/
 
 `--category3`  
-The Sub category to scrape. Expects a name -- see `config.json` for available options. Has no default.
+The Tertiary category to scrape. Expects a name -- see `config.json` for available options. Has no default.
 
 ## Contributing
 
 To have your contributions considered, include passing tests, and follow the existing code patterns.
-

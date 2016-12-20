@@ -1,7 +1,14 @@
 {
-    "lodestone_root_url": "http://na.finalfantasyxiv.com/lodestone/playguide/db/item/",
+    "lodestone_root_url": "http://na.finalfantasyxiv.com/lodestone/playguide/db/",
     "output_format": "json",
+    "category1": [
+      "item",
+      "recipe",
+      "gathering",
+      "shop"
+    ],
     "category2": {
+      "item": {
         "arms": 1,
         "tools": 2,
         "armor": 3,
@@ -9,5 +16,11 @@
         "consumables": 5,
         "materials": 6,
         "other": 7
+      },
+      "recipe": {
+
+      },
+      "gathering": {},
+      "shop": {}
     }
 }

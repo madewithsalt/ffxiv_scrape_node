@@ -13,16 +13,30 @@ try {
     return new Error('Error parsing config file.');
 }
 
-var category = argv.category || 'materials',
+var category1 = argv.category1 || 'item',
+    category2 = argv.category2,
+    category3 = argv.category3,
     pages = argv.pages,
     url = config.lodestone_root_url;
 
-console.log(chalk.magenta('Starting Lodestone scrape for %s ...'), category);
+console.log(chalk.magenta('Starting Lodestone scrape for %s ...'), category1);
 
-var options = ' --url=' + url + ' --category=' + config.category2[category];
+if(category2) {
+  console.log(chalk.magenta('targeting %s subcategory:'), category2);
+}
+
+var options = ' --url=' + url + ' --category1=' + category1;
 
 if(pages) {
     options += ' --pages=' + pages;
+}
+
+if(category2) {
+  url += ' --category2=' + config.category2[category2];
+}
+
+if(category3) {
+  options += ' --category3=' + config.category3[category3];
 }
 
 // how many pages to traverse and collect data

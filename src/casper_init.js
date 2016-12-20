@@ -8,13 +8,18 @@ var args = casper.cli.args,
     options = casper.cli.options;
 
 var url = options.url,
-    category = options.category,
-    subCategory = options.subCategory,
+    category = options.category1,
+    subCategory = options.category2,
+    tertiaryCategory = options.category3,
     pages = options.pages;
 
-url += '?category2=' + category;
+url += '/' + category;
 
 if(subCategory) {
+  url += '?category2=' + subCategory;
+}
+
+if(tertiaryCategory) {
     url += '&category3=' + subCategory;
 }
 
@@ -25,7 +30,7 @@ var results = [],
 
 casper.start();
 
-if(!pages) { 
+if(!pages) {
     casper.thenOpen(url, function() {
 
         this.waitForSelector('table#character tbody', function traverseContent() {
@@ -49,7 +54,7 @@ casper.then(function() {
     if(pages > 1) {
         _.times(pages, function(i) {
             links.push(url + '&page=' + (i + 1));
-        });        
+        });
     } else {
         links.push(url + '&page=1');
     }
